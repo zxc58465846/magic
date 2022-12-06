@@ -1,0 +1,38 @@
+<html>
+<head>
+</head>
+<body>
+<script>
+	function magic(n) {
+    var m = [];
+    for(r = 0; r < n; r++) {
+        m.push([]);
+    }
+    var r = 0;//列
+    var c = parseInt((n + 1) / 2); //行
+    for(index = 1; index < n * n + 1; index ++) {
+        if(index % n == 1) {
+            r++;
+        }
+        else {
+            r--;
+            c++;
+        }
+        if(r == 0) {
+            r = n;
+        }
+        if (c > n) {
+            c = 1;
+        }
+        m[r - 1][c - 1] = index;
+    }        
+    
+    return m 
+}
+
+m = magic(5)
+console.log(m)
+document.write(m);
+</script>
+</body>
+</html>
